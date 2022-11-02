@@ -1,0 +1,64 @@
+/* Universal selectors */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Layout */
+body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr 100px;
+    min-height: 100vh;
+}
+/* display => flex */
+ul, figure {
+    display: flex;
+}
+/* header, main, footer */
+header, main, footer {
+    grid-column: 1 / 4;
+}
+/* ul li */
+ul {
+    list-style: none;
+}
+ul li {
+    /* margin on the x-axis */
+    margin-inline: 1rem;
+}
+/* header and footer */
+header, footer {
+    background-color: darkcyan;
+}
+main {
+    background-color: darkgrey;
+}
+/* figcaption */
+figcaption p{
+    text-align: center;
+    padding: 0 2rem;
+}
+/* media query 
+: First approach*/
+/* @media screen and (max-width: 900px) {
+    figure img {
+        width: 100%;
+    }
+    figure { */
+        /* flex-direction wrap */
+        /* flex-flow: column wrap;
+    }
+} */
+/* Second approach (new update on CSS3) */
+@media screen and (width <= 900px) {
+    figure img {
+        width: 100%;
+    }
+    figure {
+        /* flex-direction wrap */
+        flex-flow: column wrap;
+    }
+}
