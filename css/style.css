@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* On desktop screen */
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+.container .card {
+    width: 30rem;
+}
+.container .card img {
+    width: 20rem;
+    aspect-ratio: 1/1;
+}
+/* 
+max-width = width < 900px: targeting mobile
+min-width = width > 990px -> desktop screen
+targeting a range: 300px <= width <= 900px
+*/
+@media screen and (width < 900px) {
+    .container {
+        flex-flow: column wrap;
+    }
+}
